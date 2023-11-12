@@ -1,0 +1,54 @@
+.all-news__inner {
+    flex-direction: column;
+    padding-top: 80px;
+    padding-bottom: 80px;
+}
+.all-news__title {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+.all-news__title span {
+    color: var(--secondary-color);
+    font-size: 16px;
+    font-weight: 300;
+}
+.all-news__text {
+    max-width: 800px;
+}
+
+/* Filter start */
+.news-filter {
+    display: flex;
+    gap: 30px;
+    padding-top: 40px;
+}
+.news-filter .search {
+    flex-grow: 1;
+}
+.news-filter__select-container {
+    min-width: 320px;
+}
+/* Filter утв */
+
+
+/* News content start */
+.news-content__inner {
+    flex-direction: column;
+    padding-top: 60px;
+    padding-bottom: 45px;
+}
+.news-content__image {
+    border-radius: 40px;
+    height: 500px;
+    object-fit: cover;
+    margin-bottom: 30px;
+}
+.similar-news__inner {
+    flex-direction: column;
+    padding-bottom: 70px;
+}
+.similar-news__title {
+    margin-bottom: 40px;
+}
+/* News content end */
