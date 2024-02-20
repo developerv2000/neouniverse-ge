@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="button_style_more contact-us__submit">
-                    <button type="submit" data-sitekey="6LeTtHcpAAAAANDcYSO5J8Kbpd6tYjERQ4-vocAG" data-callback='onRecaptchaSubmit' data-action='submit'>{{ __('Отправить') }}
+                    <button class="g-recaptcha" type="submit" data-sitekey="6LeTtHcpAAAAANDcYSO5J8Kbpd6tYjERQ4-vocAG" data-callback='onRecaptchaSubmit' data-action='submit'>{{ __('Отправить') }}
                         <span class="material-icons-outlined">arrow_forward</span>
                     </button>
                 </div>
