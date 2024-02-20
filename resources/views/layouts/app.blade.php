@@ -59,7 +59,7 @@
     {{-- Selectric --}}
     <link rel="stylesheet" href="{{ asset('js/selectric/selectric.css') }}">
     {{-- Styles --}}
-    <link rel="stylesheet" href="{{ mix('css/minified/app.css') }}">    
+    <link rel="stylesheet" href="{{ mix('css/minified/app.css') }}">
     {{-- <link rel="stylesheet" href="{{ asset('css/uncompressed/main.css') }}">
     <link rel="stylesheet" href="{{ asset('css/uncompressed/home.css') }}">
     <link rel="stylesheet" href="{{ asset('css/uncompressed/about.css') }}">
@@ -81,6 +81,13 @@
     <script src="{{ asset('js/selectric/selectric.min.js') }}"></script>
     {{-- Google Maps --}}
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAneCOkP0fjY3gOXV9DYFTdA59yWXDvNLw&language={{ $locale }}&callback=initMap" async defer></script>
+    {{-- Google Recaptcha v3 --}}
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    <script>
+        function onRecaptchaSubmit(token) {
+            document.getElementById("feedback-form").submit();
+        }
+    </script>
     {{-- Scripts --}}
     <script src="{{ asset('js/uncompressed/main.js') }}"></script>
 </body>

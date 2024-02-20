@@ -14,7 +14,7 @@ yarn-error.log
 /.idea
 /.vscode
 
-.htaccess
+/.htaccess
 /public/img/carousel/*
 /public/img/news/*
 !/public/img/news/thumbs

@@ -18,7 +18,7 @@
         <div class="main-container contact-us__inner" style="background-image: url({{ asset('img/main/contact-us-pattern.svg') }})">
             <h1 class="main-title contact-us__title">{{ __('Свяжитесь с нами') }}!</h1>
 
-            <form action="{{ route('email.feedback') }}" method="POST" class="contact-us__form">
+            <form action="{{ route('email.feedback') }}" method="POST" class="contact-us__form" id="feedback-form">
                 @csrf
 
                 <div class="contact-us__email">
@@ -32,7 +32,7 @@
                 </div>
 
                 <div class="button_style_more contact-us__submit">
-                    <button type="submit">{{ __('Отправить') }}
+                    <button type="submit" data-sitekey="6LeTtHcpAAAAANDcYSO5J8Kbpd6tYjERQ4-vocAG" data-callback='onRecaptchaSubmit' data-action='submit'>{{ __('Отправить') }}
                         <span class="material-icons-outlined">arrow_forward</span>
                     </button>
                 </div>

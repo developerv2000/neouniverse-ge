@@ -8,6 +8,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Http;
 
 class MainController extends Controller
 {
@@ -63,7 +64,21 @@ class MainController extends Controller
 
     public function emailFeedback(Request $request)
     {
-        Mail::to('info@neouniverse.co.uk')->send(new Feedback($request));
+        $recaptchaResponse = $request->input('g-recaptcha-response');
+        $recaptchaSecret = env('RECAPTCHA_SECRET_KEY');
+        $remoteIp = $request->ip();
+
+        $response = Http::asForm()->post('https://www.google.com/recaptcha/api/siteverify', [
+            'secret' => $recaptchaSecret,
+            'response' => $recaptchaResponse,
+            'remoteip' => $remoteIp,
+        ]);
+
+        $responseData = $response->json();
+
+        if ($responseData['success'] && $responseData['score'] >= 0.5) {
+            Mail::to('info@neouniverse.co.uk')->send(new Feedback($request));
+        }
 
         return redirect()->back();
     }
