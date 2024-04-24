@@ -229,11 +229,11 @@
 
     /* Supervision */
     .supervision {
-        padding: 0 0 28px;
+        padding: 28px 0;
     }
 
     .supervision__title {
-        font-size: 16px;
+        font-size: 20px;
         margin-bottom: 20px;
     }
 
