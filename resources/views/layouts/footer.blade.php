@@ -55,7 +55,9 @@
 
     @if ($route == 'products.index')
         <div class="footer__supervision">
-            {!! $supervisionForm !!}
+            <div class="footer__supervision main-container">
+                {!! $supervisionForm !!}
+            </div>
         </div>
     @endif
 

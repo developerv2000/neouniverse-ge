@@ -468,7 +468,7 @@ button {
 }
 
 .supervision__contacts-item a {
-    color: var(--main-dark-color);
+    color: var(--main-color);
     text-decoration: underline;
 }
 
@@ -511,7 +511,7 @@ button {
     margin-top: 12px;
     justify-content: center;
     display: flex;
-    background-color: var(--main-dark-color);
+    background-color: var(--main-color);
     color: white;
     padding: 8px;
     border-radius: 8px;
@@ -519,7 +519,7 @@ button {
 }
 
 .supervision__text a {
-    color: var(--main-dark-color);
+    color: var(--main-color);
     text-decoration: underline;
 }
 /* ------------ /end Supervision ------------ */
