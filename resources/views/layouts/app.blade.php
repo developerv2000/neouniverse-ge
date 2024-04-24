@@ -7,12 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>
-        @hasSection
-            ('title')
-            @yield('title') – Neo Universe
-        @else
-            Neo Universe
-        @endif
+        @hasSection('title')@yield('title') – Neo Universe
+        @else Neo Universe @endif
     </title>
 
     {{-- Noindex remove on production --}}
@@ -28,8 +24,7 @@
     <meta property="og:type" content="object" />
     <meta name="twitter:card" content="summary_large_image">
 
-    @hasSection
-        ('meta-tags')
+    @hasSection('meta-tags')
         @yield('meta-tags')
     @else
         @php $shareText = App\Models\Option::where('tag', 'share-text')->first(); @endphp
