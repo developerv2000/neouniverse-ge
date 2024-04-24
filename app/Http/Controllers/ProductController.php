@@ -9,6 +9,7 @@ use App\Models\ProductsCategory;
 use App\Models\Symptom;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Validator;
 use stdClass;
 
@@ -31,7 +32,11 @@ class ProductController extends Controller
                 ->orderBy('name', 'asc')
                 ->get();
 
-        return view('products.index', compact('products', 'productsCount', 'categories', 'symptoms', 'forms', 'request', 'highlightedProducts'));
+        // Get Supervision form
+        $response = Http::get('http://farmkomnadzor.spey.tj/api/get-view?lang=' . app()->getLocale() . '&redirect_url=' . route('products.index'));
+        $supervisionForm = $response->successful() ? $response->body() : null;
+
+        return view('products.index', compact('products', 'productsCount', 'categories', 'symptoms', 'forms', 'request', 'highlightedProducts', 'supervisionForm'));
     }
 
     public function single($url)

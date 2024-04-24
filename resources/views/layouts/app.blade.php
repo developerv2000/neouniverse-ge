@@ -7,7 +7,8 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>
-        @hasSection ('title')
+        @hasSection
+            ('title')
             @yield('title') – Neo Universe
         @else
             Neo Universe
@@ -19,14 +20,16 @@
     <meta name="googlebot" content="noindex, nofollow" />
     <meta name="yandex" content="none">
 
-    {{-----------Meta tags start--------- --}}
+    {{-- ---------Meta tags start--------- --}}
     {{-- Same metas for all routes --}}
-    <meta name="keywords" content="Neo universe, Нео Юниверс, здоровье, фармкомпания, препарат, медицина, лечение, медицинские новости, health, medicine, medical news, health - new opportunities, Здоровье – новые возможности"/>
+    <meta name="keywords"
+        content="Neo universe, Нео Юниверс, здоровье, фармкомпания, препарат, медицина, лечение, медицинские новости, health, medicine, medical news, health - new opportunities, Здоровье – новые возможности" />
     <meta property="og:site_name" content="Neo Universe">
     <meta property="og:type" content="object" />
     <meta name="twitter:card" content="summary_large_image">
 
-    @hasSection ('meta-tags')
+    @hasSection
+        ('meta-tags')
         @yield('meta-tags')
     @else
         @php $shareText = App\Models\Option::where('tag', 'share-text')->first(); @endphp
@@ -38,7 +41,7 @@
         <meta name="twitter:title" content="Neo Universe">
         <meta name="twitter:image" content="{{ asset('img/main/logo-share.png') }}">
     @endif
-    {{----------- Meta tags end-----------}}
+    {{-- --------- Meta tags end--------- --}}
 
     {{-- Favicons for all devices --}}
     <link rel="icon" href="{{ asset('img/main/cropped-favicon-32x32.png') }}" sizes="32x32">
@@ -79,8 +82,6 @@
     <script src="{{ asset('js/owl-carousel/owl.carousel.min.js') }}"></script>
     {{-- Selectric plugin --}}
     <script src="{{ asset('js/selectric/selectric.min.js') }}"></script>
-    {{-- Google Maps --}}
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAneCOkP0fjY3gOXV9DYFTdA59yWXDvNLw&language={{ $locale }}&callback=initMap" async defer></script>
     {{-- Google Recaptcha v3 --}}
     <script src="https://www.google.com/recaptcha/api.js"></script>
     <script>
@@ -90,6 +91,9 @@
     </script>
     {{-- Scripts --}}
     <script src="{{ asset('js/uncompressed/main.js') }}"></script>
+
+    {{-- Google Maps --}}
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAneCOkP0fjY3gOXV9DYFTdA59yWXDvNLw&language={{ $locale }}&callback=initMap" async defer></script>
 </body>
 
 </html>

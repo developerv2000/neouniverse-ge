@@ -227,6 +227,26 @@
         padding-bottom: 40px;
     }
 
+    /* Supervision */
+    .supervision {
+        padding: 0 0 28px;
+    }
+
+    .supervision__title {
+        font-size: 16px;
+        margin-bottom: 20px;
+    }
+
+    .supervision__contacts-title,
+    .supervision__form-title {
+        font-size: 15px;
+    }
+
+    .supervision__form {
+        padding: 16px;
+        width: auto;
+    }
+
     /* Footer end */
 
 
@@ -495,6 +515,7 @@
     .news-card__image {
         width: 100%;
     }
+
     /* News end */
 
 
@@ -511,5 +532,6 @@
         width: 100%;
         padding: 0;
     }
+
     /* Error page end */
 }

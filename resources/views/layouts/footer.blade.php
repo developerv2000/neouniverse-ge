@@ -53,6 +53,12 @@
         </div>
     @endif
 
+    @if ($route == 'products.index')
+        <div class="footer__supervision">
+            {!! $supervisionForm !!}
+        </div>
+    @endif
+
     <div class="footer-map">
         <div class="main-container footer__contacts">
             <div class="footer__contacts-inner">
